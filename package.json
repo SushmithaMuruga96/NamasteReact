@@ -1,0 +1,22 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is Namaste React Learning phase",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SushmithaMuruga96/NamasteReact.git"
+  },
+  "author": "Sushmitha Muruganantham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SushmithaMuruga96/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/SushmithaMuruga96/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}
