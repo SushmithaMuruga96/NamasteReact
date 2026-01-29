@@ -22,9 +22,8 @@ const HeadingComponent = () => {
   return (
     <div id="container">
       <Title />
-      {titleElement}
-      {/* Js expression */}Hello, {name}!<h2>{1000 + 2000}</h2>
-      {console.log("In Functional Component")}
+      <Title></Title>
+      {Title()}
       <h1 className="head" tabIndex="5">
         Hello from Functional Component!
       </h1>
