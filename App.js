@@ -1,28 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//React Element
-const jsxheading = (
-  <h1 className="head" tabIndex="5">
-    Hello World from JSX!
+const Title = () => <h1 className="title">This is an Title Component</h1>;
+
+const elem = <span>This is JSX Element</span>;
+
+const titleElement = (
+  <h1 className="title" tabIndex="0">
+    {elem} &nbsp; This is an Title Element
   </h1>
 );
-//React Component
+
+//component composition - combining multiple components into component
+// javascrtip expression - any valid set of literals,
+// variables, operators,
+//js code statements
+// and expressions can be written inside curly braces {}
+
+const name = "John Doe";
 const HeadingComponent = () => {
   return (
-    <h1 className="head" tabIndex="5">
-      Hello World from Component!
-    </h1>
+    <div id="container">
+      <Title />
+      {titleElement}
+      {/* Js expression */}Hello, {name}!<h2>{1000 + 2000}</h2>
+      {console.log("In Functional Component")}
+      <h1 className="head" tabIndex="5">
+        Hello from Functional Component!
+      </h1>
+    </div>
   );
 };
 
-// both are same
-const HeadingComponent2 = () => (
-  <h1 className="head" tabIndex="5">
-    Hello World from Component!
-  </h1>
-);
-
 // react component is nothing but a function which returns a react element
-const root = ReactDOM.createRoot(document.getElementById("content"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent />); //render method takes react element as an argument and coverts it to DOM element
