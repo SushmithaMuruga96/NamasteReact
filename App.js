@@ -20,19 +20,22 @@ import "./App.css";
   -copyright
 */
 
-const RestoCard = () => {
+// object
+
+const restaurantObj = [];
+const RestoCard = (props) => {
+  const { name, cuisines, rating, delivery, logoImageKey } = props.resData;
+  console.log(props.resData);
   return (
     <div className="resto-card">
-      <img
-        src="https://images.deliveryhero.io/image/talabat/MenuItems/MUTTON_BIRIYANI638652657254569152.jpg"
-        alt="resto-image"
-        className="resto-image"
-      />
-      <h3 className="resto-name">Meghana Foods</h3>
-      <p className="cuisine">South Indian, North Indian, Chinese</p>
-      <p className="rating">Rating: 4.5</p>
-      <p className="delivery-time">Delivery Time: 30 mins</p>
-      <p className="cost-for-two">Cost for Two: ₹200</p>
+      <img src={""} alt="resto-image" className="resto-image" />
+
+      <h3 className="resto-name">{name}</h3>
+      <p className="cuisine">{cuisines.join(", ")}</p>
+      <p className="rating">
+        Rating: {rating.score} ({rating.displayCount})
+      </p>
+      <p className="delivery-time">Delivery Time: {delivery.time} mins</p>
     </div>
   );
 };
@@ -42,16 +45,9 @@ const Restaurants = () => {
       <div className="search">Search</div>
       <h2>Restaurants</h2>
       <div className="resto-container">
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
-        <RestoCard />
+        {restaurantObj.map((restaraunt) => (
+          <RestoCard resData={restaraunt} key={restaraunt.outletCode} />
+        ))}
       </div>
     </div>
   );
